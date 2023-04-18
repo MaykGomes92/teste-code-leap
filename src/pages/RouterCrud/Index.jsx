@@ -7,6 +7,7 @@ import iconEdit from "../../assets/bx_bx-edit.png";
 import axios from "axios";
 import ModalDelete from "../../components/ModalDelete/Index.jsx";
 import ModalEdit from "../../components/ModalEdit/Index.jsx";
+import LoadingDiv from "../../components/Loading/Index.jsx";
 
 function Index() {
  const [crudList, setCrudList] = React.useState();
@@ -74,7 +75,10 @@ function Index() {
   <MainCrud>
    <header>
     <h1 className="titleCrud">CodeLeap Network</h1>
-    <Link to="/">Logout</Link>
+    <div className="userLogout">
+     <h1>{window.localStorage.userName}</h1>
+     <Link to="/">Logout</Link>
+    </div>
    </header>
    <div className="contentCrud">
     <section className="createCrud">
@@ -105,7 +109,7 @@ function Index() {
      )}
     </section>
 
-    {crudList && (
+    {crudList ? (
      <div className="listCruds">
       {crudList.results.map((item, index) => (
        <div className="cruds" key={item.id}>
@@ -138,6 +142,8 @@ function Index() {
        </div>
       ))}
      </div>
+    ) : (
+     <LoadingDiv />
     )}
    </div>
 

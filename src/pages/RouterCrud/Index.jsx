@@ -71,8 +71,10 @@ function Index() {
   setIdCrudTarget(item.target.id);
  }
 
- return (
-  <MainCrud>
+ if(crudList){
+
+  return (
+   <MainCrud>
    <header>
     <h1 className="titleCrud">CodeLeap Network</h1>
     <div className="userLogout">
@@ -92,7 +94,7 @@ function Index() {
       name="title"
       onChange={handleValuesInput}
       maxLength={40}
-     />
+      />
 
      <label htmlFor="content">Content</label>
      <input
@@ -101,12 +103,12 @@ function Index() {
       id="content"
       name="content"
       onChange={handleValuesInput}
-     />
+      />
      {valuesInput && valuesInput.title && valuesInput.content ? (
       <button onClick={postCruditem}>Create</button>
-     ) : (
-      <button style={{ background: "grey" }}>Create</button>
-     )}
+      ) : (
+       <button style={{ background: "grey" }}>Create</button>
+       )}
     </section>
 
     {crudList ? (
@@ -122,7 +124,7 @@ function Index() {
            id={item.id}
            className="iconDelete"
            onClick={idCrud}
-          />
+           />
           <img
            src={iconEdit}
            alt=""
@@ -149,21 +151,22 @@ function Index() {
 
    {modalDelete && (
     <ModalDelete
-     idCrudTarget={idCrudTarget}
-     setModalDelete={setModalDelete}
-     modalDelete={modalDelete}
+    idCrudTarget={idCrudTarget}
+    setModalDelete={setModalDelete}
+    modalDelete={modalDelete}
     />
    )}
 
    {modalEdit && (
     <ModalEdit
-     modalEdit={modalEdit}
-     setModalEdit={setModalEdit}
-     idCrudTarget={idCrudTarget}
+    modalEdit={modalEdit}
+    setModalEdit={setModalEdit}
+    idCrudTarget={idCrudTarget}
     />
-   )}
+    )}
   </MainCrud>
  );
+}
 }
 
 export default Index;

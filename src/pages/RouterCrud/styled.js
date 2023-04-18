@@ -172,48 +172,20 @@ header {
 @media (max-width:600px){
 
   header {
-  display:flex;
-  background-color:#7695EC;
-  height:80px;
-  padding:0 37px;  
-  width:800px;
-  margin:auto;
-  width:100%;
-  align-items:center;
   justify-content:space-around;
   .userLogout{
     display:flex;
     align-items:center;
     h1{
-      margin-left:15px;
-      color:#fff;
-      font-family:'Roboto',sans-serif,cursive;
       font-size:18px;
-      font-weight:700;
-    }
-    a{
-      margin-left:15px;
-      color:#fff;
-      font-family:'Roboto',sans-serif,cursive;
-      font-size:22px;
-      font-weight:700;
-      border:solid 2px grey;
-      border-radius:9px;
-      padding:5px 20px;
-      transition:all ease .5s;
-      :hover{
-        background-color:#777777;
-      }
     }
   }
   .titleCrud{
-    color:#fff;
-    font-family:'Roboto',sans-serif,cursive;
     font-size:18px;
-    font-weight:700;
     line-height:initial;
   }
 }
+
 .contentCrud {
   .listCruds {
     .cruds {

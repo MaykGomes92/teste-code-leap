@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import RouterHome from "./pages/RouterHome/Index";
-import RouterCrud from "./pages/RouterCrud/Index";
+import RouterHome from "./pages/RouterHome/Index.jsx";
+import RouterCrud from "./pages/RouterCrud/Index.jsx";
 import "./App.css";
 
 function App() {

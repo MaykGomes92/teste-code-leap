@@ -3,7 +3,6 @@ import styled from "styled-components";
 
 export const ModalEdit = styled.div`
 position:fixed;
-max-width:1920px;
 width:100%;
 height:1080px;
 left:0px;

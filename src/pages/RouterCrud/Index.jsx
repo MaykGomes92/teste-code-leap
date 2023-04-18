@@ -21,7 +21,7 @@ function Index() {
   let fetchApi = async () => {
    let json = await fetch("https://dev.codeleap.co.uk/careers/").then(
     (response) => response.json()
-   );
+   ).catch(err => err);
    if (json) {
     setCrudList(json);
    }
@@ -70,8 +70,6 @@ function Index() {
   }
   setIdCrudTarget(item.target.id);
  }
-
- if(crudList){
 
   return (
    <MainCrud>
@@ -166,7 +164,6 @@ function Index() {
     )}
   </MainCrud>
  );
-}
 }
 
 export default Index;
